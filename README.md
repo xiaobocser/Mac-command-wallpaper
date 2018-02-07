@@ -52,4 +52,4 @@
 
 ## 参考
 
-	  V2EX：https://www.v2ex.com/t/427092
+> V2EX：https://www.v2ex.com/t/427092

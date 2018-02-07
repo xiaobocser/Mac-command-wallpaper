@@ -6,9 +6,10 @@
 
 ## 安装
 
-打开`终端`工具
+打开`终端`程序
 
 1. 安装homebrew
+	  `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 2. 安装python
 
@@ -31,18 +32,17 @@
       `bash set_desktop.sh`
 
       
-
 2. 生成几周前壁纸并设定背景
 
       `bash set_desktop.sh 2`
 
-      
 
 3. 每周定时生成壁纸并设定背景
 
       `crontab -e`
-      
+	  `0 12 * * 1 /bin/bash $YOURPATH/set_desktop.sh` 
+	  > 每周一中午12点执行
 
-## 相关资源
+## 参考
 
 V2EX：https://www.v2ex.com/t/427092

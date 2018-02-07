@@ -12,6 +12,37 @@
 
 ![](./source/python\_calander.jpg)
 
+## 使用
+
+> `git clone https://github.com/xiaobocser/code-wallpaper-2018-Mac.git`
+
+> 命令格式
+
+`bash set_desktop.sh $your_backgroud $pass_week`
+
+> 几种简单的使用方法
+
+1. 生成本周壁纸并设定背景
+
+      `bash set_desktop.sh source/risingabovethefog_2560x1440.jpg`
+
+	  > (source/risingabovethefog_2560x1440.jpg可以替换为你的背景图片地址，背景图片用2560x1440分辨率效果最佳)
+      
+2. 生成几周前壁纸并设定背景
+
+      `bash set_desktop.sh $your_backgroud 2`
+
+	  > 生成2周前壁纸并设定背景
+
+3. 每周定时生成壁纸并设定背景
+
+      `crontab -e`
+
+	  `0 12 * * 1 /bin/bash $FILE_PATH/set_desktop.sh $your_backgroud` 
+
+	  > 每周一中午12点执行
+
+
 ## 安装
 
 > 打开`终端`程序
@@ -33,30 +64,6 @@
 4. 安装Ghostscript
 
       `brew install ghostscript`
-
-## 使用
-
-> 打开`终端`程序，并`cd $YOURPATH`
-
-1. 生成本周壁纸并设定背景
-
-      `bash set_desktop.sh`
-
-	  > (背景图片用2560x1440分辨率效果最佳)
-      
-2. 生成几周前壁纸并设定背景
-
-      `bash set_desktop.sh 2`
-
-	  > 生成2周前壁纸并设定背景
-
-3. 每周定时生成壁纸并设定背景
-
-      `crontab -e`
-
-	  `0 12 * * 1 /bin/bash $YOURPATH/set_desktop.sh` 
-
-	  > 每周一中午12点执行
 
 ## 参考
 

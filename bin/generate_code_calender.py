@@ -19,12 +19,14 @@ def composite_image(week_num, pdf_path, pic_path, pic_save_path):
 
 
 def main():
-    week_num = datetime.datetime.now().isocalendar()[1]
-    if len(sys.argv) > 1:
-        week_num = int(sys.argv[1])
     path = os.getcwd()  # now path
     pdf_path = path + '/source/2018_code_calendar.pdf[{}]'  # pdf path
     pic_path = path + '/source/yosemiteonfire_2560x1440.jpg'  # wallpaper
+    if len(sys.argv) > 1:
+        pic_path = sys.argv[1]
+    week_num = datetime.datetime.now().isocalendar()[1]
+    if len(sys.argv) > 2:
+        week_num = int(sys.argv[2])
     week_num_str = '0' + str(week_num) if week_num < 10 else str(week_num)
 
     pic_save_path = path + '/data/code_calendar_wallpaper_' + week_num_str + '.jpg'  # new wallpaper

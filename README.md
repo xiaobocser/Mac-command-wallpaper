@@ -1,12 +1,12 @@
 # 2018年每周编程日历---Mac 版本
 
-如图
+> 如图
 
 ![](./data/code\_calendar\_wallpaper\_06.jpg)
 
 ## 安装
 
-打开`终端`程序
+> 打开`终端`程序
 
 1. 安装homebrew
 

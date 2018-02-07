@@ -28,6 +28,8 @@
 
 ## 使用
 
+> 打开`终端`程序,并`cd $YOURPATH`
+
 1. 生成壁纸并设定背景
 
       `bash set_desktop.sh`
@@ -48,4 +50,4 @@
 
 ## 参考
 
-V2EX：https://www.v2ex.com/t/427092
+	  V2EX：https://www.v2ex.com/t/427092

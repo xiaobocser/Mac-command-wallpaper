@@ -20,46 +20,43 @@
 
 4. 2018年编程日历壁纸
 
-> 如图
+    > 如图
 
-![](./composite/code\_calendar\_wallpaper\_06.jpg)
+    ![](./composite/code\_calendar\_wallpaper\_06.jpg)
 
-### 简介
+    ### 简介
 
-> 拿任何一张你喜欢的`背景图片`和`编程日历`合二为一，生成你的独特桌面背景
+    > 拿任何一张你喜欢的`背景图片`和`编程日历`合二为一，生成你的独特桌面背景
 
-> `编程日历`每周一更；`背景图片`随你所动。
+    > `编程日历`每周一更；`背景图片`随你所动。
 
-![](./source/python\_calander.jpg)
+    ![](./source/python\_calander.jpg)
 
-​	  `wallpaper [para1] com [para3]`
+      `wallpaper [para1] com [para3]`
 
->  	 [para1] 可以使用上面1、2、3命令的参数
+    >  [para1] 可以使用上面1、2、3命令的参数
 
-> ​	 [para3] 0-52整数，代表从这周开始算，生成[para3]周前的编程日历
+    > [para3] 0-52整数，代表从这周开始算，生成[para3]周前的编程日历
 
+    比如:
 
-比如:
+     `wallpaper randweb com`
 
-​	  `wallpaper randweb com`
+    > 从网络上随机下载壁纸，并生成本周编程日历做壁纸 
 
->  	 从网络上随机下载壁纸，并生成本周编程日历做壁纸 
+     `wallpaper YOUR_WALLPAPAER_PATH com 3`
 
-​	  `wallpaper YOUR_WALLPAPAER_PATH com 3`
+    > 将你指定的壁纸(建议2560x1440分辨率)，生成3周前的编程日历做壁纸
 
->  	 将你指定的壁纸(建议2560x1440分辨率)，生成3周前的编程日历做壁纸
+    高级:
 
+    > 每周定时生成编程日历壁纸
 
-高级:
+     `crontab -e`
 
-> ​	  每周定时生成编程日历壁纸
+     `0 12 * * 1 /bin/bash $FILE_PATH/wallpaper randweb` 
 
-​	  `crontab -e`
-
-​	  `0 12 * * 1 /bin/bash $FILE_PATH/wallpaper randweb` 
-
-> ​	  每周一中午12点执行
-
+    > 每周一中午12点执行
 
 
 5. 命令提示

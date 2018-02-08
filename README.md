@@ -16,13 +16,13 @@
 
 	  `wallpaper randlocal`
 
-	  > 随机本地壁纸
+	  > 随机壁纸目录为./background
 
 4. 2018年编程日历壁纸
 
 > 如图
 
-![](./data/code\_calendar\_wallpaper\_06.jpg)
+![](./composite/code\_calendar\_wallpaper\_06.jpg)
 
 ### 简介
 
@@ -31,7 +31,6 @@
 > `编程日历`每周一更；`背景图片`随你所动。
 
 ![](./source/python\_calander.jpg)
-
 
 	  `wallpaper [para1] com [para3]`
 

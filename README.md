@@ -8,7 +8,7 @@
 
 > 拿任何一张你喜欢的`背景图片`和`编程日历`合二为一，生成你的独特桌面背景
 
-> `编程日历`每周一更。`背景图片`随你所动。
+> `编程日历`每周一更；`背景图片`随你所动。
 
 ![](./source/python\_calander.jpg)
 
@@ -55,13 +55,17 @@
 
       `brew install python`
 
-3. 安装ImageMagick
+3. 安装wand包
+
+	  `pip install wand`
+
+4. 安装ImageMagick
 
       `brew install imagemagick@6`
 
       `export MAGICK_HOME=/usr/local/opt/imagemagick@6`
 
-4. 安装Ghostscript
+5. 安装Ghostscript
 
       `brew install ghostscript`
 

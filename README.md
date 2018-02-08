@@ -69,7 +69,7 @@
 
 ## 安装
 
-1. `git clone https://github.com/xiaobocser/code-wallpaper-2018-Mac.git`
+1. `git clone https://github.com/xiaobocser/Mac-command-wallpaper.git`
 
 2. bash install.sh
 

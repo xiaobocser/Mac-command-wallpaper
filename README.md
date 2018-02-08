@@ -1,5 +1,7 @@
 # Mac命令行壁纸（Mac command wallpaper）
 
+![](./source/demonstration.gif)
+
 `wallpaper [para1] [para2] [para3]`
 
 ## 功能

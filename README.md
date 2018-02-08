@@ -6,17 +6,17 @@
 
 1. 设定所选图片为壁纸
 
-`wallpaper YOUR_WALLPAPAER_PATH`
+      `wallpaper YOUR_WALLPAPAER_PATH`
 
 2. 随机网络壁纸（几乎没有重复）
 
-`wallpaper randweb`
+      `wallpaper randweb`
 
 3. 随机本地壁纸
 
-`wallpaper randlocal`
+	  `wallpaper randlocal`
 
-> 随机background目录壁纸
+	  > 随机本地壁纸
 
 4. 2018年编程日历壁纸
 
@@ -33,45 +33,46 @@
 ![](./source/python\_calander.jpg)
 
 
-`wallpaper [para1] com [para3]`
+	  `wallpaper [para1] com [para3]`
 
-> [para1] 可以使用上面1、2、3命令的参数
-> [para3] 0-52整数，代表从这周开始算，生成[para3]周前的编程日历
+	  > [para1] 可以使用上面1、2、3命令的参数
+
+	  > [para3] 0-52整数，代表从这周开始算，生成[para3]周前的编程日历
 
 比如:
 
-`wallpaper randweb com`
+	  `wallpaper randweb com`
 
-> 从网络上随机下载壁纸，并生成本周编程日历做壁纸 
+	  > 从网络上随机下载壁纸，并生成本周编程日历做壁纸 
 
-`wallpaper YOUR_WALLPAPAER_PATH com 3`
+	  `wallpaper YOUR_WALLPAPAER_PATH com 3`
 
-> 将你指定的壁纸(建议2560x1440分辨率)，生成3周前的编程日历做壁纸
+	  > 将你指定的壁纸(建议2560x1440分辨率)，生成3周前的编程日历做壁纸
 
 高级:
 
-> 每周定时生成编程日历壁纸
+	  > 每周定时生成编程日历壁纸
 
-`crontab -e`
+	  `crontab -e`
 
-`0 12 * * 1 /bin/bash $FILE_PATH/wallpaper randweb` 
+	  `0 12 * * 1 /bin/bash $FILE_PATH/wallpaper randweb` 
 
-> 每周一中午12点执行
+	  > 每周一中午12点执行
 
 
 5. 命令提示
 
-`wallpaper --h`
+	  `wallpaper --h`
 
 ## 安装
 
-> `git clone https://github.com/xiaobocser/code-wallpaper-2018-Mac.git`
+1. `git clone https://github.com/xiaobocser/code-wallpaper-2018-Mac.git`
 
-> bash install.sh
+2. bash install.sh
 
-> 新建窗口并尝试执行 `wallpaper`
+3. 新建窗口并尝试执行 `wallpaper`
 
-*如果执行`wallpaper`报错，请如下进行依赖安装*
+*如果执行`wallpaper`报错，请执行如下依赖安装*
 
 ## 依赖安装
 

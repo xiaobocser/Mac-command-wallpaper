@@ -2,6 +2,8 @@
 
 ![](./source/demonstration.gif)
 
+![](./source/demonstration-alfred.gif)
+
 `wallpaper [para1] [para2] [para3]`
 
 ## 功能
@@ -66,6 +68,8 @@
 5. 命令提示
 
 	  `wallpaper --h`
+
+6. 和alfred、launchBar更配哦
 
 ## 安装
 

@@ -1,0 +1,90 @@
+#!/bin/bash
+
+path=$(dirname `readlink -f $0`)
+cd $path
+
+pic_path="background/default.jpg"
+if [ $# -gt 0 ]; then
+	# pic_path or randweb or randlocal
+	pic_path=$1
+	extension="${pic_path##*.}"
+	if [ ${pic_path:0:3} == "--h" ]; then
+		echo -e "useage -> wallpaper [para1] [para2] [para3] \n\t\teach para can be empty[means no function]\n\t\twhat's more, \"xxx\" means you should input this string to apply the function \n"
+		echo -e "para1 : your_wallpaper_path    :  wallpaper from yourself local path, like background/default.jpg \n" \
+			    "       \"randweb\"        :  wallpaper from web random , this will take a few seconds, please be patience\n" \
+			    "       \"randlocal\"      :  wallpaper from background random"
+		echo "para2 : \"com\"            :  composite code calender "
+		echo "para3 : number[0-52]     :  this means pass week counter of code calender, with para2"
+		exit -1
+	elif [ $extension != "jpg" -a $extension != "png" -a $extension != "randweb" -a $extension != "randlocal" ]; then
+		echo "first para should be your_wallpaper_path or randweb or randlocal"
+		exit -1
+	fi
+fi
+
+composite="no"
+pass_week=0
+week_num=`date +%V`
+if [ $# -gt 1 ]; then
+	composite=$2
+	if [ ${composite:0:3} == "com" ] ; then
+		composite="yes"
+	else
+		composite="no"
+	fi
+	if [ $# -gt 2 ]; then
+		pass_week=$3
+		if [ $pass_week -ge $week_num ] ; then
+			week_num="01"
+		else
+			week_num=`date +%V -d -${pass_week}weeks`
+		fi
+	fi
+	if [ ! -d composite ] ; then
+		mkdir composite 
+	fi
+fi
+
+localpath=$path"/"$pic_path
+
+function get_pic() {
+	if [ $pic_path == "randweb" ]; then
+		web_list=`head -1 source/web_info | cut -d ' ' -f 1`
+		web_page=`head -1 source/web_info | cut -d ' ' -f 2`
+		agent=`tail -n1 source/web_info`
+		curl -o source/wallhaven -A "$agent" "$web_list" > /dev/null 2>&1 
+		info=`cat source/wallhaven`
+		head_info=${info:13000:15000}
+		pic_id=`expr "$head_info" : ".*data-wallpaper-id=\"\(.*\)\" style=.*"`
+		pic_url="$web_page$pic_id.jpg"
+		random_pic_path="background/random.jpg"
+		curl -o $random_pic_path "$pic_url" > /dev/null 2>&1 
+		if [ `grep 404 $random_pic_path | wc -l` -gt 0 ]; then
+			pic_url="$web_page$pic_id.png"
+			random_pic_path="background/random.png"
+			curl -o $random_pic_path "$pic_url" > /dev/null 2>&1
+		fi
+		pic_path=$random_pic_path
+	elif [ $pic_path == "randlocal" ]; then
+		pic_path="background/"`ls background | shuf | head -1`
+	fi
+	localpath=$path"/"$pic_path
+}
+
+function composite() {
+	if [ $composite == "yes" ]; then
+		python bin/generate_code_calender.py $pic_path $week_num
+		localpath=$path"/composite/code_calendar_wallpaper_$week_num.jpg"
+	fi
+}
+
+function set_pic() {
+	time=`date +%F_%X`
+	cp -f $localpath $localpath$time
+	osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$localpath$time\""
+	rm -f $localpath$time
+}
+
+get_pic
+composite
+set_pic

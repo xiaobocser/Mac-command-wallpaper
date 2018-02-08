@@ -1,10 +1,30 @@
-# 2018年每周编程日历---Mac 版本
+# Mac命令行壁纸（Mac command wallpaper）
+
+`wallpaper [para1] [para2] [para3]`
+
+## 功能
+
+1. 设定所选图片为壁纸
+
+`wallpaper YOUR_WALLPAPAER_PATH`
+
+2. 随机网络壁纸（几乎没有重复）
+
+`wallpaper randweb`
+
+3. 随机本地壁纸
+
+`wallpaper randlocal`
+
+> 随机background目录壁纸
+
+4. 2018年编程日历壁纸
 
 > 如图
 
 ![](./data/code\_calendar\_wallpaper\_06.jpg)
 
-## 简介
+### 简介
 
 > 拿任何一张你喜欢的`背景图片`和`编程日历`合二为一，生成你的独特桌面背景
 
@@ -12,38 +32,48 @@
 
 ![](./source/python\_calander.jpg)
 
-## 使用
+
+`wallpaper [para1] com [para3]`
+
+> [para1] 可以使用上面1、2、3命令的参数
+> [para3] 0-52整数，代表从这周开始算，生成[para3]周前的编程日历
+
+比如:
+
+`wallpaper randweb com`
+
+> 从网络上随机下载壁纸，并生成本周编程日历做壁纸 
+
+`wallpaper YOUR_WALLPAPAER_PATH com 3`
+
+> 将你指定的壁纸(建议2560x1440分辨率)，生成3周前的编程日历做壁纸
+
+高级:
+
+> 每周定时生成编程日历壁纸
+
+`crontab -e`
+
+`0 12 * * 1 /bin/bash $FILE_PATH/wallpaper randweb` 
+
+> 每周一中午12点执行
+
+
+5. 命令提示
+
+`wallpaper --h`
+
+## 安装
 
 > `git clone https://github.com/xiaobocser/code-wallpaper-2018-Mac.git`
 
-> 命令格式
+> bash install.sh
 
-`bash set_desktop.sh $your_backgroud $pass_week`
+> 新建窗口并尝试执行 `wallpaper`
 
-> 几种简单的使用方法
+*如果执行`wallpaper`报错，请如下进行依赖安装*
 
-1. 生成本周壁纸并设定背景
-
-      `bash set_desktop.sh source/risingabovethefog_2560x1440.jpg`
-
-	  > (source/risingabovethefog_2560x1440.jpg可以替换为你的背景图片地址，背景图片用2560x1440分辨率效果最佳)
-      
-2. 生成几周前壁纸并设定背景
-
-      `bash set_desktop.sh $your_backgroud 2`
-
-	  > 生成2周前壁纸并设定背景
-
-3. 每周定时生成壁纸并设定背景
-
-      `crontab -e`
-
-	  `0 12 * * 1 /bin/bash $FILE_PATH/set_desktop.sh $your_backgroud` 
-
-	  > 每周一中午12点执行
-
-
-## 安装
+## 依赖安装
 
 > 打开`终端`程序
 
@@ -54,6 +84,8 @@
 2. 安装python
 
       `brew install python`
+
+> 如果不使用日历壁纸的功能，安装到这里就可以了。
 
 3. 安装wand包
 
@@ -69,6 +101,8 @@
 
       `brew install ghostscript`
 
-## 参考
+## 感谢
 
-> V2EX：https://www.v2ex.com/t/427092
+> V2EX: https://www.v2ex.com/t/427092
+
+> wallhaven: https://alpha.wallhaven.cc/

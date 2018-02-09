@@ -62,7 +62,7 @@
 
      `0 12 * * 1 /bin/bash $FILE_PATH/wallpaper randweb` 
 
-    > 每周一中午12点执行
+    > 每周一中午12点自动从网络随机挑选一张作为壁纸
 
 
 5. 命令提示

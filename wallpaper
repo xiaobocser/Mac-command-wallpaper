@@ -48,7 +48,11 @@ if [ $# -gt 1 ]; then
 		if [ $pass_week -ge $week_num ] ; then
 			week_num="01"
 		else
-			week_num=`date +%V -d -${pass_week}weeks`
+			#week_num=`date +%V -d -${pass_week}weeks`
+			week_num=$(($week_num -${pass_week}))
+			if [ ${#week_num} -eq 1 ] ; then
+				week_num="0"$week_num
+			fi
 		fi
 	fi
 	if [ ! -d composite ] ; then
@@ -100,7 +104,7 @@ function composite() {
 }
 
 function set_pic() {
-	time=`date +%F_%X`
+	time=$(date +%F_%X)
 	cp -f $localpath $localpath$time
 	osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$localpath$time\""
 	rm -f $localpath$time

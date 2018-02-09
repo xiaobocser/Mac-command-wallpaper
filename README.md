@@ -26,7 +26,7 @@
 
     > 如图
 
-    ![](./composite/code\_calendar\_wallpaper\_06.jpg)
+    ![](./composite/code_calendar_wallpaper_06.jpg)
 
     ### 简介
 
@@ -34,7 +34,7 @@
 
     > `编程日历`每周一更；`背景图片`随你所动。
 
-    ![](./source/python\_calander.jpg)
+    ![](./source/python_calander.jpg)
 
     **命令:**
 
@@ -79,7 +79,7 @@
 
 1. `git clone https://github.com/xiaobocser/Mac-command-wallpaper.git`
 
-2. bash install.sh
+2. `bash install.sh`
 
 > 如果安装报错，请参考[readlink命令安装](https://github.com/xiaobocser/Mac-command-wallpaper/issues/3)
 

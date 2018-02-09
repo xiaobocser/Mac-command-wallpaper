@@ -16,9 +16,9 @@
 
 > [Mac-wallpaper-switcher 下载地址](https://github.com/xiaobocser/Mac-command-wallpaper/releases/tag/v2.0)
 >
-> 而且，`基础功能`中代码的很多进行了重写，为了保证一个`无配置的Mac`可以正常使用所有功能，通用性更好。
+> 而且，`基础功能`中的很多代码进行了重写，为了保证`无需配置的Mac`可以正常使用，通用性更好。
 >
-> 当然，如果您不需要`Alfred`的`workflow`功能，那么可以继续`更愉快`的使用如下功能 ^ ^
+> 当然，如果您不需要`Alfred`的`workflow`功能，那么可以继续`更愉快`的使用基础功能 ^ ^
 
 ## 基础功能
 

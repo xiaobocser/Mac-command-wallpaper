@@ -18,12 +18,18 @@ if [ -f ~/.bash_profile ] ; then
 	if [ $exist -eq 0 ]; then
 		echo "export PATH=\$PATH":$path >> ~/.bash_profile
 	fi
+	if [ -f /usr/local/opt/imagemagick@6 ] ; then
+		export MAGICK_HOME=/usr/local/opt/imagemagick@6 >> ~/.bash_profile
+	fi
 fi
 
 if [ -f ~/.zshrc ] ; then
 	exist=$(grep "export PATH=\$PATH":$path ~/.zshrc | wc -l)
 	if [ $exist -eq 0 ]; then
 		echo "export PATH=\$PATH":$path >> ~/.zshrc
+	fi
+	if [ -f /usr/local/opt/imagemagick@6 ] ; then
+		export MAGICK_HOME=/usr/local/opt/imagemagick@6 ~/.zshrc
 	fi
 fi
 

@@ -121,6 +121,10 @@
 
       `brew install ghostscript`
 
+6. 再次运行`install.sh`
+
+      `bash install.sh`
+
 ## 感谢
 
 > V2EX: https://www.v2ex.com/t/427092

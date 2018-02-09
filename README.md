@@ -81,10 +81,8 @@
 
 2. `bash install.sh`
 
-> 如果安装报错，请参考[readlink命令安装](https://github.com/xiaobocser/Mac-command-wallpaper/issues/3)
 
 3. 新建窗口并尝试执行 `wallpaper`
-
 
 
 

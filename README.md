@@ -10,7 +10,9 @@
 
 ## v2.0更新内容
 
-> 为了更方便的使用壁纸切换的命令，做到最精简，出了`Alfred`版本，即`Mac-wallpaper-switcher`。**参见下图效果**
+> 为了更方便的使用壁纸切换的命令，做到最精简，出了`Alfred`版本，即`Mac-wallpaper-switcher`。
+>
+> **效果如下**
 
 ![](./source/alfred-wallpaper.gif)
 

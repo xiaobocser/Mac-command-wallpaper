@@ -69,7 +69,11 @@
 
 	  `wallpaper --h`
 
-6. 和alfred、launchBar更配哦
+6. 原生
+
+    > 如果不使用编程日历功能，全部通过mac的命令行工具完成，无需过多编译安装。
+
+7. 和alfred、launchBar更配哦
 
 ## 安装
 
@@ -77,9 +81,11 @@
 
 2. bash install.sh
 
+> 如果安装报错，请参考[readlink命令安装](https://github.com/xiaobocser/Mac-command-wallpaper/issues/3)
+
 3. 新建窗口并尝试执行 `wallpaper`
 
-*如果执行`wallpaper`报错，请执行如下依赖安装*
+> ** 如果不使用2018年编程日历壁纸的功能，安装到这里就可以了。需要的同学请进行`依赖安装` **
 
 ## 依赖安装
 
@@ -92,8 +98,6 @@
 2. 安装python
 
       `brew install python`
-
-> 如果不使用2018年编程日历壁纸的功能，安装到这里就可以了。
 
 3. 安装wand包
 

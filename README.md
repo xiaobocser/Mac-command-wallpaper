@@ -4,6 +4,10 @@
 
 ![](./source/demonstration-alfred.gif)
 
+
+
+## 命令格式
+
 `wallpaper [para1] [para2] [para3]`
 
 ## 功能
@@ -71,7 +75,7 @@
 
 6. 原生
 
-    > 如果不使用编程日历功能，全部通过mac的命令行工具完成，无需过多编译安装。
+    > 如果不使用编程日历功能，全部通过mac的原生命令行完成，无需其它编译安装。
 
 7. 和alfred、launchBar更配哦
 

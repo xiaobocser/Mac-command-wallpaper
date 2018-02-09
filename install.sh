@@ -13,5 +13,18 @@ for pt in $path ; do
 done
 path=$real_path
 export PATH=$PATH:$path
-echo "export PATH=\$PATH":$path >> ~/.bash_profile
+if [ -f ~/.bash_profile ] ; then
+	exist=$(grep "export PATH=\$PATH":$path ~/.bash_profile | wc -l)
+	if [ $exist -eq 0 ]; then
+		echo "export PATH=\$PATH":$path >> ~/.bash_profile
+	fi
+fi
+
+if [ -f ~/.zshrc ] ; then
+	exist=$(grep "export PATH=\$PATH":$path ~/.zshrc | wc -l)
+	if [ $exist -eq 0 ]; then
+		echo "export PATH=\$PATH":$path >> ~/.zshrc
+	fi
+fi
+
 chmod +x wallpaper

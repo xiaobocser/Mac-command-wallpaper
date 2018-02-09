@@ -1,17 +1,6 @@
 #!/bin/bash
 
-path=$(cd "$(dirname "$0")"; pwd)
-real_path=""
-i=0
-for pt in $path ; do
-	if [ $i == 0 ] ; then
-		real_path=$pt
-		i=1
-	else
-		real_path=$real_path"\ "$pt
-	fi
-done
-path=$real_path
+path=$(dirname `readlink -f $0`)
 cd $path
 
 pic_path="background/default.jpg"
@@ -56,14 +45,6 @@ if [ $# -gt 1 ]; then
 	fi
 fi
 
-function random()
-{
-    max=$1
-    num=$(date +%s)
-    ((retnum=num%max+1))
-    echo $retnum
-}
-
 localpath=$path"/"$pic_path
 
 function get_pic() {
@@ -85,9 +66,7 @@ function get_pic() {
 		fi
 		pic_path=$random_pic_path
 	elif [ $pic_path == "randlocal" ]; then
-		max_c=`ls background | wc -l`
-		random_val=$(random $max_c)
-		pic_path="background/"`ls background | sed -n "${random_val}p" `
+		pic_path="background/"`ls background | shuf | head -1`
 	fi
 	localpath=$path"/"$pic_path
 }

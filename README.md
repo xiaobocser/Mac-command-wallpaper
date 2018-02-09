@@ -60,9 +60,9 @@
 
      `crontab -e`
 
-     `0 12 * * 1 /bin/bash $FILE_PATH/wallpaper randweb` 
+     `0 12 * * 1 /bin/bash $FILE_PATH/wallpaper randweb com` 
 
-    > 每周一中午12点自动从网络随机挑选一张作为壁纸
+    > 每周一中午12点自动从网络随机挑选生成编程日历并作为壁纸
 
 
 5. 命令提示

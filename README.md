@@ -2,15 +2,23 @@
 
 ![](./source/demonstration.gif)
 
-![](./source/demonstration-alfred.gif)
-
 
 
 ## 命令格式
 
 `wallpaper [para1] [para2] [para3]`
 
-## 功能
+## v2.0更新内容
+
+> 为了更方便的使用壁纸切换的命令，做到最精简，出了`Alfred`版本，即Mac-wallpaper-switcher。**参见下图效果**
+
+![](./source/alfred-wallpaper.gif)
+
+> 而且，功能v1.0中代码的很多进行了重写，为了保证一个`无配置的Mac`可以正常使用所有功能，通用性更好。
+>
+> 当然，如果您不需要`Alfred`的`workflow`功能，那么可以继续`更愉快`的使用如下功能。
+
+## 功能v1.0
 
 1. 设定所选图片为壁纸
 

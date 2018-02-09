@@ -26,7 +26,7 @@
 
     > 如图
 
-    ![](./composite/code_calendar_wallpaper_06.jpg)
+    ![](./composite/code_calendar_wallpaper_04.jpg)
 
     ### 简介
 

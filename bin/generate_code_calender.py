@@ -23,8 +23,10 @@ def composite_image(week_num, pdf_path, pic_path, pic_save_path):
     dis_left = 10
     dis_top = 10
 
+    page = start_page + week_num
+
     pdfile = getPdfReader(pdf_path)
-    pageObj = pdfile.getPage(week_num)
+    pageObj = pdfile.getPage(page)
     dst_pdf = PdfFileWriter()
     dst_pdf.addPage(pageObj)
 
@@ -32,7 +34,6 @@ def composite_image(week_num, pdf_path, pic_path, pic_save_path):
     dst_pdf.write(pdf_bytes)
     pdf_bytes.seek(0)
     
-    page = start_page + week_num
     #with Image(filename=pdf_path.format(page), resolution=200) as calendar:
     with Image(file=pdf_bytes, resolution=200) as calendar:
         calendar.format = 'png'

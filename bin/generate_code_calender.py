@@ -5,18 +5,11 @@ import os
 import io
 from wand.image import Image
 from wand.color import Color
-<<<<<<< HEAD
 import io
 from PyPDF2 import PdfFileReader, PdfFileWriter
 
 memo = {}
  
-=======
-from PyPDF2 import PdfFileReader, PdfFileWriter
-
-memo = {}
-
->>>>>>> 22a7aa0b0eb131bd3e4db8965feb4fa77f519e37
 def getPdfReader(filename):
     reader = memo.get(filename, None)
     if reader is None:
@@ -29,42 +22,24 @@ def composite_image(week_num, pdf_path, pic_path, pic_save_path):
     start_page = 6  # PDF start page
     dis_left = 10
     dis_top = 10
-<<<<<<< HEAD
-   
-=======
 
->>>>>>> 22a7aa0b0eb131bd3e4db8965feb4fa77f519e37
     pdfile = getPdfReader(pdf_path)
     pageObj = pdfile.getPage(week_num)
     dst_pdf = PdfFileWriter()
     dst_pdf.addPage(pageObj)
-<<<<<<< HEAD
- 
-    pdf_bytes = io.BytesIO()
-    dst_pdf.write(pdf_bytes)
-    pdf_bytes.seek(0)
-
-    page = start_page + week_num
-    #with Image(filename=pdf_path.format(page), resolution=200) as calendar:
-    with Image(file=pdf_bytes, resolution=200) as calendar:
-        calendar.format = 'png'
-        with Color('#FFFFFF') as white:
-             twenty_percent = int(65535 * 0.5)  # Note: percent must be calculated from Quantum
-             calendar.transparent_color(white, alpha=0.0, fuzz=twenty_percent)
-=======
 
     pdf_bytes = io.BytesIO()
     dst_pdf.write(pdf_bytes)
     pdf_bytes.seek(0)
     
     page = start_page + week_num
+    #with Image(filename=pdf_path.format(page), resolution=200) as calendar:
     with Image(file=pdf_bytes, resolution=200) as calendar:
         calendar.format = 'png'
         # calendar.background_color = Color("transparent")
         with Color('#FFFFFF') as white:
             twenty_percent = int(65535 * 0.2)  # Note: percent must be calculated from Quantum
             calendar.transparent_color(white, alpha=0.0, fuzz=twenty_percent)
->>>>>>> 22a7aa0b0eb131bd3e4db8965feb4fa77f519e37
         with Image(filename=pic_path) as background:
             background.composite_channel(
                 'default_channels', calendar, 'blend', dis_left, dis_top)
@@ -73,10 +48,7 @@ def composite_image(week_num, pdf_path, pic_path, pic_save_path):
 
 def main():
     path = os.getcwd()  # now path
-<<<<<<< HEAD
     #pdf_path = path + '/source/2018_code_calendar.pdf[{}]'  # pdf path
-=======
->>>>>>> 22a7aa0b0eb131bd3e4db8965feb4fa77f519e37
     pdf_path = path + '/source/2018_code_calendar.pdf'  # pdf path
     pic_path = path + '/background/yosemiteonfire_2560x1440.jpg'  # wallpaper
     if len(sys.argv) > 1:

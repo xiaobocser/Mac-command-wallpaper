@@ -121,7 +121,7 @@
 
 3. 安装wand包
 
-	  `pip install wand`
+    `pip install wand`
 
 4. 安装ImageMagick
 
@@ -129,9 +129,7 @@
 
       `export MAGICK_HOME=/usr/local/opt/imagemagick@6`
 
-      `brew switch imagemagick@6 6.9.8`
-
-      `brew pin imagemagick@6`
+      `pip install PyPDF2`
 
 5. 安装Ghostscript
 

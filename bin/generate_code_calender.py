@@ -36,7 +36,7 @@ def composite_image(week_num, pdf_path, pic_path, pic_save_path):
     
     #with Image(filename=pdf_path.format(page), resolution=200) as calendar:
     with Image(file=pdf_bytes, resolution=200) as calendar:
-        calendar.format = 'png'
+        calendar.format = 'jpg'
         # calendar.background_color = Color("transparent")
         with Color('#FFFFFF') as white:
             twenty_percent = int(65535 * 0.2)  # Note: percent must be calculated from Quantum

@@ -16,7 +16,7 @@
 
 ![](./source/alfred-wallpaper.gif)
 
-> [Mac-wallpaper-switcher 下载地址](https://github.com/xiaobocser/Mac-command-wallpaper/releases/tag/v2.1)
+> [Mac-wallpaper-switcher 下载地址](https://github.com/xiaobocser/Mac-command-wallpaper/releases/tag/v2.2)
 >
 > 而且，`基础功能`中的很多代码进行了重写，为了保证`无需配置的Mac`可以正常使用，通用性更好。
 >

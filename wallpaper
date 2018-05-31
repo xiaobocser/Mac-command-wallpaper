@@ -16,7 +16,7 @@ cd $path
 
 pic_path="background/default.jpg"
 if [ $# -gt 0 ]; then
-	# pic_path or randweb or randlocal
+	# pic_path or randweb or randlocal or save
 	pic_path=$1
 	extension="${pic_path##*.}"
 	if [ ${pic_path:0:3} == "--h" ]; then
@@ -27,8 +27,8 @@ if [ $# -gt 0 ]; then
 		echo "para2 : \"com\"            :  composite code calender "
 		echo "para3 : number[0-52]     :  this means pass week counter of code calender, with para2"
 		exit -1
-	elif [ $extension != "jpg" -a $extension != "png" -a $extension != "randweb" -a $extension != "randlocal" ]; then
-		echo "first para should be your_wallpaper_path or randweb or randlocal"
+	elif [ $extension != "jpg" -a $extension != "png" -a $extension != "randweb" -a $extension != "randlocal" -a "save" ]; then
+		echo "first para should be your_wallpaper_path or randweb or randlocal or save"
 		exit -1
 	fi
 fi
@@ -80,11 +80,13 @@ function get_pic() {
 		head_info=${info:13000:15000}
 		pic_id=`expr "$head_info" : ".*data-wallpaper-id=\"\(.*\)\" style=.*"`
 		pic_url="$web_page$pic_id.jpg"
-		random_pic_path="background/random.jpg"
+		time=`date +%s`
+		random_pic_path="background/random"$time".jpg"
+		rm -f background/random*
 		curl -o $random_pic_path "$pic_url" > /dev/null 2>&1 
 		if [ `grep 404 $random_pic_path | wc -l` -gt 0 ]; then
 			pic_url="$web_page$pic_id.png"
-			random_pic_path="background/random.png"
+			random_pic_path="background/random"$time".png"
 			curl -o $random_pic_path "$pic_url" > /dev/null 2>&1
 		fi
 		pic_path=$random_pic_path
@@ -92,6 +94,12 @@ function get_pic() {
 		max_c=`ls background | wc -l`
 		random_val=$(random $max_c)
 		pic_path="background/"`ls background | sed -n "${random_val}p" `
+	elif [ $pic_path == "save" ]; then
+        save_file=`ls -l -t background/ | head -2 | tail -1 | awk '{print $NF}'`
+		if [ ${save_file:0:6} == "random" ] ; then
+			mv -f background/$save_file background/x_$save_file
+		fi
+        exit 0
 	fi
 	localpath=$path"/"$pic_path
 }
@@ -104,10 +112,11 @@ function composite() {
 }
 
 function set_pic() {
-	time=$(date +%F_%X)
-	cp -f $localpath $localpath$time
-	osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$localpath$time\""
-	rm -f $localpath$time
+	#time=$(date +%F_%X)
+	#cp -f $localpath $localpath$time
+	#osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$localpath$time\""
+	#rm -f $localpath$time
+	osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$localpath\""
 }
 
 get_pic

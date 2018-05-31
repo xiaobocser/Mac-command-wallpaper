@@ -32,6 +32,10 @@
 
       `wallpaper randweb`
 
+      **新增功能:** 保存上次下载的壁纸到本地（相当于收藏）
+
+      `wallpaper save`
+
 3. 随机本地壁纸
 
     `wallpaper randlocal`

@@ -22,6 +22,8 @@
 >
 > 当然，如果您不需要`Alfred`的`workflow`功能，那么可以继续`更愉快`的使用基础功能 ^ ^
 
+[v2.2 更新日志](https://github.com/xiaobocser/Mac-command-wallpaper/issues/13)
+
 ## 基础功能
 
 1. 设定所选图片为壁纸
@@ -32,7 +34,7 @@
 
       `wallpaper randweb`
 
-      **新增功能:** 保存上次下载的壁纸到本地（相当于收藏）
+      **新增功能:** 保存上次下载的壁纸到本地（相当于收藏），并可以通过`命令3`再使用
 
       `wallpaper save`
 

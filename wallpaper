@@ -75,11 +75,12 @@ function get_pic() {
 		web_list=`head -1 source/web_info | cut -d ' ' -f 1`
 		web_page=`head -1 source/web_info | cut -d ' ' -f 2`
 		agent=`tail -n1 source/web_info`
-		curl -o source/wallhaven -A "$agent" "$web_list" > /dev/null 2>&1 
+		curl -o source/wallhaven -A "$agent" "$web_list" > /dev/null 2>&1
 		info=`cat source/wallhaven`
 		head_info=${info:13000:15000}
 		pic_id=`expr "$head_info" : ".*data-wallpaper-id=\"\(.*\)\" style=.*"`
-		pic_url="$web_page$pic_id.jpg"
+		pic_id_path=${pic_id:0:2}
+		pic_url="$web_page$pic_id_path/wallhaven-$pic_id.jpg"
 		time=`date +%s`
 		random_pic_path="background/random"$time".jpg"
 		rm -f background/random*
